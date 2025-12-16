@@ -324,7 +324,7 @@ function App() {
 
   // Onboarding - no categories exist
   if (categories?.length === 0) {
-    return <OnboardingView onCreateCategory={handleCreateCategory} />;
+    return <OnboardingView onCreateCategory={handleCreateCategory} onImportData={handleImportData} />;
   }
 
   return (

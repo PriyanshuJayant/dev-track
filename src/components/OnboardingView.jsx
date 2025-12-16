@@ -1,9 +1,14 @@
-import { useState } from 'react';
-import { Plus, Sparkles, ClipboardList } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { Plus, Sparkles, ClipboardList, Download } from 'lucide-react';
 
-const OnboardingView = ({ onCreateCategory }) => {
+const OnboardingView = ({ onCreateCategory, onImportData }) => {
   const [categoryName, setCategoryName] = useState('');
   const [step, setStep] = useState(1); // 1: welcome, 2: name input
+  const fileInputRef = useRef(null);
+
+  const handleImportClick = () => {
+    fileInputRef.current?.click();
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,6 +43,20 @@ const OnboardingView = ({ onCreateCategory }) => {
                 <Plus size={20} />
                 Create Your First List
               </button>
+              <button 
+                className="btn btn--ghost btn--lg"
+                onClick={handleImportClick}
+              >
+                <Download size={20} />
+              </button>
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept=".json"
+                onChange={onImportData}
+                style={{ display: 'none' }}
+                aria-hidden="true"
+              />
             </div>
 
             <div className="onboarding__quick-start">

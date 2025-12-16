@@ -327,9 +327,14 @@ const HomeView = ({
             <div className="empty-state__icon" aria-hidden="true"><ClipboardList size={40} /></div>
             <h3 className="empty-state__title">No lists yet</h3>
             <p className="empty-state__text">Create your first list to start organizing your tasks.</p>
-            <button onClick={handleOpenCreateModal} className="btn btn--primary">
-              <Plus size={18} aria-hidden="true" /> Create Your First List
-            </button>
+            <div className="empty-state__actions">
+              <button onClick={handleOpenCreateModal} className="btn btn--primary">
+                <Plus size={18} aria-hidden="true" /> Create Your First List
+              </button>
+              <button onClick={onImportData} className="btn btn--ghost">
+                <Download size={18} aria-hidden="true" /> Import
+              </button>
+            </div>
           </div>
         ) : (
           <DndContext 

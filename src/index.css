@@ -1463,6 +1463,13 @@ body {
   margin-bottom: var(--spacing-lg);
 }
 
+.empty-state__actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 /* Toast Notification */
 .toast {
   position: fixed;
@@ -1922,6 +1929,10 @@ body {
 }
 
 .onboarding__actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
   margin-bottom: var(--spacing-2xl);
 }
 

@@ -1,0 +1,12 @@
+/* 
+ * App-specific styles
+ * Main styles are in index.css
+ * This file is kept for any component-specific overrides
+ */
+
+/* Hide button text on small screens */
+@media (max-width: 480px) {
+  .btn-text {
+    display: none;
+  }
+}

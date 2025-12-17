@@ -85,6 +85,9 @@ const CourseCard = ({
   };
 
   const handleTitleKeyDown = (e) => {
+    // Stop propagation to prevent header from capturing space/enter keys
+    e.stopPropagation();
+    
     if (e.key === 'Enter') {
       e.preventDefault();
       titleInputRef.current?.blur();

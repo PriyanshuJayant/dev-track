@@ -1210,6 +1210,17 @@ body {
   background: var(--bg-hover);
 }
 
+.task-item:focus-within {
+  background: var(--bg-hover);
+  outline: 1px solid var(--primary);
+  outline-offset: -1px;
+}
+
+/* When any task-item has focus-within, disable hover on other task-items */
+.task-card__body:has(.task-item:focus-within) .task-item:not(:focus-within):hover {
+  background: transparent;
+}
+
 .task-item--completed .task-item__text {
   color: var(--text-disabled);
   text-decoration: line-through;
